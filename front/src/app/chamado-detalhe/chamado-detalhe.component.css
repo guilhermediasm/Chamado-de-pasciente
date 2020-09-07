@@ -1,0 +1,25 @@
+.button {
+    border-color: transparent;
+    height: 100px;
+    width: 200px;
+    color: #1E88E5;
+}
+
+.button:hover {
+    background: #1E88E5;
+    box-shadow: slategray;
+    color: white;
+}
+
+#group-buttons {
+    padding-left: 30%;
+    align-items: center;
+}
+
+#titleEditarChamado {
+    margin-top: 50px;
+}
+
+#button-delete {
+    margin-left: 20px;
+}

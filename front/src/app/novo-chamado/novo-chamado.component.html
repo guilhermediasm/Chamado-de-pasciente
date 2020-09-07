@@ -1,0 +1,55 @@
+<div class="novo-chamado">
+  <div [hidden]="submitted">
+    <h1>Novo chamado</h1>
+    <form (ngSubmit)="addChamado(chamadoForm)" #chamadoForm="ngForm">
+      <div class="form-group">
+        <label for="id_paciente">Id paciente</label>
+        <input (ngModelChange)="buscPaciente($event)" type="text" class="form-control" id="id_paciente" required
+          [(ngModel)]="model.id_paciente" name="id_paciente" #id_paciente="ngModel">
+        <div [hidden]="id_paciente.valid || id_paciente.pristine" class="alert alert-danger">
+          id do paciente e requerido
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nome_paciente">Nome do paciente</label>
+        <input [disabled]="true" type="text" class="form-control" id="nome_paciente" required
+          [(ngModel)]="model.nome_paciente" name="nome_paciente" #nome_paciente="ngModel"
+          placeholder="{{nomePaciente}}">
+
+      </div>
+
+      <div class="form-group">
+        <label for="motivo">Motivo</label>
+
+          <select  [(ngModel)]="selectedValue"  class="form-control" id="motivo" required name="motivo">
+            <option *ngFor="let motivo of motivo"  [ngValue]="motivo">{{motivo.descricao}}</option>
+          </select>
+
+        <div [hidden]="motivo.valid || motivo.pristine" class="alert alert-danger">
+          motivo e requerido
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="descricao">Descrição</label>
+        <input type="text" class="form-control" id="descricao" required [(ngModel)]="model.descricao" name="descricao"
+          #descricao="ngModel">
+        <div [hidden]="descricao.valid || descricao.pristine" class="alert alert-danger">
+          nome do paciente e requerido
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status</label>
+        <input type="text" class="form-control" id="status" required [(ngModel)]="model.status" name="status"
+          #status="ngModel">
+        <div [hidden]="status.valid || status.pristine" class="alert alert-danger">
+          status do paciente e requerido
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!chamadoForm.form.valid">Adicionar</button>
+    </form>
+  </div>
+</div>

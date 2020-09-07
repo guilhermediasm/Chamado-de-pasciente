@@ -1,0 +1,17 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+    <mat-toolbar id="title-menu">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/chamado" routerLinkActive="active">Chamados</a>
+      <a mat-list-item routerLink="/novochamado" routerLinkActive="active">Novo Chamado</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="container">
+   <router-outlet></router-outlet>
+  </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

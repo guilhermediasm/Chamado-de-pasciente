@@ -1,0 +1,40 @@
+{
+  "name": "javascript_backend_test",
+  "version": "1.0.0",
+  "description": "Teste de JavaScript Backend Mobile Saúde",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix config.js index.js libs/**.js controllers/**.js models/**.js routes/**.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/mobilesaude2/javascript_fullstack_teste/src/master/"
+  },
+  "author": "Haryell da Silva Daleprane <haryell@mobilesaude.com.br>",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.8.0",
+    "aws-sdk": "^2.730.0",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "consign": "^0.1.6",
+    "cors": "^2.8.5",
+    "elasticsearch": "^16.7.1",
+    "express": "^4.17.1",
+    "helmet": "^3.23.3",
+    "http-aws-es": "^6.0.0",
+    "ioredis": "^4.17.3",
+    "knex": "^0.21.4",
+    "knex-paginate": "^1.2.3",
+    "mysql": "^2.18.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@elastic/elasticsearch-mock": "^0.3.0",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
+  }
+}

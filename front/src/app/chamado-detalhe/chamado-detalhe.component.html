@@ -1,0 +1,46 @@
+<div class="novo-chamado">
+  <div [hidden]="submitted">
+    <h1 id="titleEditarChamado">Editar Chamado</h1>
+    <form (ngSubmit)="updateChamado(updateChamadoForm)" #updateChamadoForm="ngForm">
+      <div class="form-group">
+        <label for="id_paciente">Id paciente</label>
+        <input  [disabled]="true"  value="{{id_paciente}}" type="text" class="form-control" id="id_paciente" name="id_paciente">
+      </div>
+
+      <div class="form-group">
+        <label for="nome_paciente">Nome do paciente</label>
+        <input value="{{nome_paciente}}" [disabled]="true" type="text" class="form-control" id="nome_paciente" required
+          name="nome_paciente" placeholder="{{nome_paciente}}">
+
+      </div>
+
+      <div class="form-group">
+        <label for="motivo">Motivo</label>
+        <select [(ngModel)]="selectedValue" class="form-control" id="motivo" required name="motivo">
+          <option *ngFor="let motivo of motivo" [attr.value]="motivo.id_motivo"
+            [attr.selected]="motivo.id_motivo == nrSelect ? true : null">{{motivo.descricao}}</option>
+        </select>
+
+        <div [hidden]="motivo.valid || motivo.pristine" class="alert alert-danger">
+          motivo e requerido
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="descricao">Descrição</label>
+        <input [(ngModel)]="model.descricao" value="{{descricao}}" type="text" class="form-control" id="descricao" required name="descricao">
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status</label>
+        <input  [(ngModel)]="model.status"  value="{{status}}" type="text" class="form-control" id="status" required name="status">
+      </div>
+
+      <div id="group-buttons">
+        <button type="submit" class="button">Atualizar</button>
+        <button (click)="onClickDelete()" class="button" id="button-delete">Deletar</button>
+      </div>
+
+    </form>
+  </div>
+</div>
